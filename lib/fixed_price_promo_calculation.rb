@@ -9,7 +9,7 @@ class FixedPricePromoCalculation
   def call(item)
     left = (item.quantity % criteria.quantity)
     item.price = ((item.quantity / criteria.quantity) * price) +
-                 (left * item.price)
+                 (left * item.sku.price)
     item
   end
 end
